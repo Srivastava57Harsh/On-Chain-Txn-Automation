@@ -1,38 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# On-Chain Transaction Automation Using Intents
 
-## Getting Started
+This project aims to streamline on-chain transaction processes by enabling users to interact with decentralized applications (dApps) through natural language intents. By leveraging UserOp.js and large language models (LLMs), users can perform blockchain transactions using straightforward commands, reducing the complexity associated with traditional dApp interactions.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Traditional blockchain transactions require users to interact with complex dApp interfaces, manage wallets, input details, and sign transactions manually, often causing friction for both technical and non-technical users. This project enables users to bypass such intricate steps by automating on-chain transactions via intent-based inputs. Users can specify commands like "send 1 ETH to address X," which are then processed and executed on-chain, enhancing accessibility and usability.
+
+## Key Components
+
+- **Frontend (Next.js)**: Provides a user interface for intent-based input and transaction status display.
+- **Backend (UserOp.js)**: Processes user intents, converts them to transaction objects, and handles blockchain commands.
+- **Intent Handling with LLMs**: Natural language commands are parsed into structured transaction data for automated execution.
+
+## Features
+
+- **Natural Language Interface**: Users can express transaction intents using simple, everyday language.
+- **Automated Transaction Workflow**: The system automates user interactions such as wallet connection and transaction signing.
+- **Error Reduction**: Automated input validation reduces user errors, such as incorrect addresses or gas limit settings.
+- **Cross-dApp Automation**: Enables multi-step dApp interactions through a single intent, facilitating complex workflows.
+
+## Project Structure
+
+- `frontend/` - Built with Next.js, manages user interface and intent input.
+- `backend/` - Processes intents using UserOp.js and connects with the blockchain.
+- `intentProcessor.js` - Handles natural language parsing, converts commands into executable transaction objects.
+- `userop.js` - Integrates with wallets and manages the execution of transactions.
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Srivastava57Harsh/On-Chain-Txn-Automation.git
+   ```
+
+## Install dependencies:
+  ```
+  cd On-Chain-Txn-Automation
+  npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configure environment variables for blockchain network, wallet, and API keys.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Start the frontend and backend:
+  ```
+  npm run start
+  ```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Usage:
+- Connect your wallet using MetaMask.
+- Enter a transaction intent (e.g., "send 0.5 ETH to 0xABC123...").
+- Review the generated transaction details.
+- Confirm to execute the transaction on-chain.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## License
+This project is licensed under the MIT License.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
